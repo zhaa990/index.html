@@ -1,126 +1,308 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Website Saya</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZHAA STORE | Kece, Aman, Terpercaya</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0a0a0c',
+                        darkAccent: '#141417',
+                        primary: '#00ffff', // Cyan Kece
+                        secondary: '#00cccc',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0c;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0c; }
+        ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00ffff; }
 
-body{
-margin:0;
-font-family:Arial;
-background:#0f172a;
-color:white;
-}
+        /* Neon Glow Effect on Hover */
+        .glow-hover:hover {
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+            transform: translateY(-5px);
+            transition: all 0.3s ease-in-out;
+        }
 
-header{
-display:flex;
-justify-content:space-between;
-padding:20px;
-background:#020617;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-}
-
-.hero{
-text-align:center;
-padding:100px 20px;
-background:linear-gradient(135deg,#6366f1,#8b5cf6);
-}
-
-.hero h1{
-font-size:40px;
-}
-
-.hero button{
-padding:12px 25px;
-border:none;
-border-radius:8px;
-background:white;
-font-weight:bold;
-cursor:pointer;
-}
-
-.features{
-padding:50px;
-text-align:center;
-}
-
-.cards{
-display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
-}
-
-.card{
-background:#1e293b;
-padding:25px;
-border-radius:10px;
-width:220px;
-}
-
-footer{
-text-align:center;
-padding:20px;
-background:#020617;
-}
-
-</style>
+        /* Glitch Animation for Logo */
+        @keyframes glitch {
+            0% { text-shadow: 2px 0 0 #ff00ff, -2px 0 0 #00ffff; }
+            50% { text-shadow: -2px 0 0 #ff00ff, 2px 0 0 #00ffff; }
+            100% { text-shadow: 2px 0 0 #ff00ff, -2px 0 0 #00ffff; }
+        }
+        .logo-glitch:hover {
+            animation: glitch 0.3s infinite;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-<h2>MyWebsite</h2>
+    <nav class="bg-darkAccent/90 backdrop-blur-sm border-b border-gray-800 sticky top-0 z-50">
+        <div class="container mx-auto px-5 py-4 flex justify-between items-center">
+            <div class="text-3xl font-extrabold text-white logo-glitch cursor-pointer">
+                ZHAA<span class="text-primary">STORE</span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 items-center text-gray-300">
+                <a href="#" class="hover:text-primary transition duration-300">Home</a>
+                <a href="#kategori" class="hover:text-primary transition duration-300">Kategori</a>
+                <a href="#produk" class="hover:text-primary transition duration-300">Produk</a>
+                <a href="#testi" class="hover:text-primary transition duration-300">Testimoni</a>
+            </div>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Services</a>
-<a href="#">Contact</a>
-</nav>
-</header>
+            <div class="flex gap-3 items-center">
+                <button class="text-gray-300 hover:text-primary"><i class="fas fa-search text-xl"></i></button>
+                <a href="#" class="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-dark px-6 py-2 rounded-full font-bold transition duration-300 glow-hover">
+                    Masuk
+                </a>
+            </div>
+        </div>
+    </nav>
 
-<section class="hero">
-<h1>Selamat Datang di Website Saya</h1>
-<p>Website sederhana dibuat dengan HTML & CSS</p>
-<button>Mulai</button>
-</section>
+    <header class="container mx-auto px-5 py-24 md:py-32 flex flex-col items-center text-center" data-aos="fade-up">
+        <span class="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-semibold mb-4 border border-primary/20">
+            Marketplace JB Terkece di Indonesia
+        </span>
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+            Tempat JB <span class="text-primary">Aman</span> &<br> Layanan <span class="text-primary">Instan</span>.
+        </h1>
+        <p class="text-lg text-gray-400 max-w-2xl mb-10">
+            Zhaa Store menyediakan kebutuhan gaming, akun premium, dan jasa joki dengan proses paling cepat dan garansi anti-hackback.
+        </p>
+        <div class="flex gap-4">
+            <a href="#produk" class="bg-primary text-dark font-extrabold px-10 py-4 rounded-full text-lg shadow-lg hover:bg-secondary transition glow-hover">
+                Belanja Sekarang
+            </a>
+            <a href="#" class="bg-darkAccent border border-gray-700 text-white font-bold px-10 py-4 rounded-full text-lg hover:border-gray-500 transition">
+                Hubungi Admin
+            </a>
+        </div>
+    </header>
 
-<section class="features">
+    <section id="kategori" class="container mx-auto px-5 py-16">
+        <h2 class="text-3xl font-bold mb-10 text-center" data-aos="fade-up">Kategori Terpopuler</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            
+            <div class="bg-darkAccent p-8 rounded-2xl border border-gray-800 text-center transition duration-300 hover:border-primary group" data-aos="zoom-in" data-aos-delay="100">
+                <div class="bg-gray-800 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition">
+                    <i class="fas fa-gamepad text-4xl text-gray-400 group-hover:text-primary"></i>
+                </div>
+                <h3 class="font-bold text-xl">Akun Game</h3>
+                <p class="text-sm text-gray-500 mt-1">MLBB, PUBGM, FF</p>
+            </div>
+            
+            <div class="bg-darkAccent p-8 rounded-2xl border border-gray-800 text-center transition duration-300 hover:border-primary group" data-aos="zoom-in" data-aos-delay="200">
+                <div class="bg-gray-800 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition">
+                    <i class="fas fa-bolt text-4xl text-gray-400 group-hover:text-primary"></i>
+                </div>
+                <h3 class="font-bold text-xl">Top Up</h3>
+                <p class="text-sm text-gray-500 mt-1">Diamond, UC, VP</p>
+            </div>
 
-<h2>Fitur Website</h2>
+            <div class="bg-darkAccent p-8 rounded-2xl border border-gray-800 text-center transition duration-300 hover:border-primary group" data-aos="zoom-in" data-aos-delay="300">
+                <div class="bg-gray-800 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition">
+                    <i class="fas fa-crown text-4xl text-gray-400 group-hover:text-primary"></i>
+                </div>
+                <h3 class="font-bold text-xl">Premium</h3>
+                <p class="text-sm text-gray-500 mt-1">Neflix, Spotify, YT</p>
+            </div>
 
-<div class="cards">
+            <div class="bg-darkAccent p-8 rounded-2xl border border-gray-800 text-center transition duration-300 hover:border-primary group" data-aos="zoom-in" data-aos-delay="400">
+                <div class="bg-gray-800 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition">
+                    <i class="fas fa-pen-nib text-4xl text-gray-400 group-hover:text-primary"></i>
+                </div>
+                <h3 class="font-bold text-xl">Jasa Desain</h3>
+                <p class="text-sm text-gray-500 mt-1">Logo, Banner, Edit</p>
+            </div>
 
-<div class="card">
-<h3>Cepat</h3>
-<p>Website ringan dan cepat dibuka.</p>
-</div>
+        </div>
+    </section>
 
-<div class="card">
-<h3>Responsive</h3>
-<p>Tampilan cocok untuk HP dan laptop.</p>
-</div>
+    <section id="produk" class="container mx-auto px-5 py-16 bg-darkAccent rounded-3xl border border-gray-800">
+        <div class="flex justify-between items-center mb-10">
+            <h2 class="text-3xl font-bold">Produk <span class="text-primary">Ready</span></h2>
+            <a href="#" class="text-primary hover:text-secondary transition">Lihat Semua <i class="fas fa-arrow-right ml-1"></i></a>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <div class="bg-dark rounded-3xl overflow-hidden border border-gray-800 group transition duration-300 hover:border-primary" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative overflow-hidden">
+                    <img src="https://via.placeholder.com/400x300/111/fff?text=MLBB+Mythic" alt="Product" class="w-full h-56 object-cover group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-primary text-dark text-xs font-bold px-3 py-1 rounded-full">TERBARU</span>
+                </div>
+                <div class="p-6">
+                    <p class="text-xs text-gray-500">Mobile Legends</p>
+                    <h3 class="text-lg font-bold mt-1 group-hover:text-primary transition">Akun Mythic Glory | 5 Skin Collector</h3>
+                    <div class="flex justify-between items-center mt-5">
+                        <p class="text-xl font-extrabold text-white">Rp 1.250.000</p>
+                    </div>
+                    <button class="w-full mt-5 bg-gray-800 hover:bg-primary hover:text-dark text-white font-bold py-3 rounded-xl transition duration-300">Detail Produk</button>
+                </div>
+            </div>
 
-<div class="card">
-<h3>Modern</h3>
-<p>Desain modern dan sederhana.</p>
-</div>
+            <div class="bg-dark rounded-3xl overflow-hidden border border-gray-800 group transition duration-300 hover:border-primary" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative overflow-hidden">
+                    <img src="https://via.placeholder.com/400x300/111/fff?text=Valorant+Point" alt="Product" class="w-full h-56 object-cover group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-yellow-400 text-dark text-xs font-bold px-3 py-1 rounded-full">PROMO</span>
+                </div>
+                <div class="p-6">
+                    <p class="text-xs text-gray-500">Valorant</p>
+                    <h3 class="text-lg font-bold mt-1 group-hover:text-primary transition">8150 Valorant Points (VP) - Langsung Masuk</h3>
+                    <div class="flex justify-between items-center mt-5">
+                        <p class="text-xl font-extrabold text-white">Rp 760.000</p>
+                    </div>
+                    <button class="w-full mt-5 bg-gray-800 hover:bg-primary hover:text-dark text-white font-bold py-3 rounded-xl transition duration-300">Detail Produk</button>
+                </div>
+            </div>
+            
+            <div class="bg-dark rounded-3xl overflow-hidden border border-gray-800 group transition duration-300 hover:border-primary" data-aos="fade-up" data-aos-delay="300">
+                <div class="relative overflow-hidden">
+                    <img src="https://via.placeholder.com/400x300/111/fff?text=Netflix+1+Bulan" alt="Product" class="w-full h-56 object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <p class="text-xs text-gray-500">Premium Apps</p>
+                    <h3 class="text-lg font-bold mt-1 group-hover:text-primary transition">Netflix Premium 4K UHD - 1 Bulan (Private)</h3>
+                    <div class="flex justify-between items-center mt-5">
+                        <p class="text-xl font-extrabold text-white">Rp 35.000</p>
+                    </div>
+                    <button class="w-full mt-5 bg-gray-800 hover:bg-primary hover:text-dark text-white font-bold py-3 rounded-xl transition duration-300">Detail Produk</button>
+                </div>
+            </div>
 
-</div>
+            <div class="bg-dark rounded-3xl overflow-hidden border border-gray-800 group transition duration-300 hover:border-primary" data-aos="fade-up" data-aos-delay="400">
+                <div class="relative overflow-hidden">
+                    <img src="https://via.placeholder.com/400x300/111/fff?text=Jasa+Logo+Kece" alt="Product" class="w-full h-56 object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <p class="text-xs text-gray-500">Creative Services</p>
+                    <h3 class="text-lg font-bold mt-1 group-hover:text-primary transition">Jasa Desain Logo Esport/Toko Kece</h3>
+                    <div class="flex justify-between items-center mt-5">
+                        <p class="text-xl font-extrabold text-white">Rp 150.000</p>
+                    </div>
+                    <button class="w-full mt-5 bg-gray-800 hover:bg-primary hover:text-dark text-white font-bold py-3 rounded-xl transition duration-300">Detail Produk</button>
+                </div>
+            </div>
 
-</section>
+        </div>
+    </section>
 
-<footer>
-<p>© 2026 MyWebsite</p>
-</footer>
+    <section id="testi" class="container mx-auto px-5 py-24 text-center">
+        <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">Kata Mereka tentang <span class="text-primary">Zhaa</span></h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <div class="bg-darkAccent p-8 rounded-2xl border border-gray-800 relative" data-aos="fade-right" data-aos-delay="100">
+                <i class="fas fa-quote-left absolute top-6 left-6 text-3xl text-primary/20"></i>
+                <p class="text-gray-300 relative z-10">"Beli akun ML di Zhaa Store prosesnya cepet bgt. Admin ramah, akun aman sampe sekarang. Mantap!"</p>
+                <div class="flex items-center justify-center gap-3 mt-6">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full border-2 border-primary">
+                    <div class="text-left">
+                        <p class="font-bold">Andi Pratama</p>
+                        <p class="text-xs text-gray-500">Gamer</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-darkAccent p-8 rounded-2xl border border-gray-800 relative" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-quote-left absolute top-6 left-6 text-3xl text-primary/20"></i>
+                <p class="text-gray-300 relative z-10">"Top up VP paling murah dan legal cuma disini. Langsung masuk dalam hitungan detik. Kece parah!"</p>
+                <div class="flex items-center justify-center gap-3 mt-6">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full border-2 border-primary">
+                    <div class="text-left">
+                        <p class="font-bold">Siti Aisyah</p>
+                        <p class="text-xs text-gray-500">Valorant Player</p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="bg-darkAccent p-8 rounded-2xl border border-gray-800 relative" data-aos="fade-left" data-aos-delay="300">
+                <i class="fas fa-quote-left absolute top-6 left-6 text-3xl text-primary/20"></i>
+                <p class="text-gray-300 relative z-10">"Langganan Netflix premium disini udah 6 bulan gak pernah ada masalah. Trusted seller!"</p>
+                <div class="flex items-center justify-center gap-3 mt-6">
+                    <img src="https://randomuser.me/api/portraits/men/85.jpg" class="w-12 h-12 rounded-full border-2 border-primary">
+                    <div class="text-left">
+                        <p class="font-bold">Budi Santoso</p>
+                        <p class="text-xs text-gray-500">Movie Hunter</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-darkAccent border-t border-gray-800 py-16 mt-10">
+        <div class="container mx-auto px-5 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div>
+                <div class="text-3xl font-extrabold text-white logo-glitch mb-4">ZHAA<span class="text-primary">STORE</span></div>
+                <p class="text-gray-500 text-sm">Platform JB terpercaya dengan layanan instan dan garansi keamanan 100%.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-lg">Quick Links</h4>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-primary">Cara Order</a></li>
+                    <li><a href="#" class="hover:text-primary">Cek Resi</a></li>
+                    <li><a href="#" class="hover:text-primary">Hubungi Kami</a></li>
+                    <li><a href="#" class="hover:text-primary">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-lg">Pembayaran</h4>
+                <div class="flex flex-wrap gap-2 text-3xl text-gray-600">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fas fa-money-bill-wave"></i>
+                    <i class="fas fa-qrcode"></i>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-lg">Ikuti Kami</h4>
+                <div class="flex gap-4 text-2xl text-gray-500">
+                    <a href="#" class="hover:text-primary"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-primary"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="hover:text-primary"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="hover:text-primary"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-5 text-center mt-12 pt-8 border-t border-gray-800 text-gray-600 text-sm">
+            © 2024 ZHAA STORE. All rights reserved. Created with <i class="fas fa-heart text-red-500"></i> by AI.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({
+            duration: 800, // durasi animasi (ms)
+            once: true, // animasi hanya jalan sekali saat scroll
+        });
+    </script>
 </body>
-</html>
+                      </html>
